@@ -8,10 +8,10 @@
 
 
 //////////////////PROBLEM 1////////////////////
-/*  
+/*
     Create a new class called `Ticket`.
-    Make sure to call your constructor, and 
-    require these 3 parameters: items, orderTime, 
+    Make sure to call your constructor, and
+    require these 3 parameters: items, orderTime,
     customerId. Additionally, set up a property
     called `status` that always has an initial
     value of 'queued'.
@@ -22,7 +22,7 @@
 
     Inside the method, set the value of `this.status`
     to be the new status that was sent in. Then
-    console.log something like: 
+    console.log something like:
     'The order for customer [CUSTOMERID] is
     now [STATUS].'
     Where CUSTOMERID and STATUS reference the values
@@ -30,7 +30,19 @@
 */
 
 //CODE HERE
+class Ticket {
+    constructor(items, orderTime, customerId) {
+        this.items = items;
+        this.orderTime = orderTime;
+        this.customerId = customerId;
+        this.status = 'queued';
+    }
 
+    updateStatus(newStatus) {
+      this.status = newStatus;
+      console.log(`The order for customer ${this.customerId} is ${this.status}`);
+    }
+};
 
 
 /*
@@ -45,7 +57,7 @@
 */
 
 //CODE HERE
-
+const firstTicket = new Ticket('Pizza, bread, and soda', '7:03 PM', 575);
 
 /*
     Call the `updateStatus` method on
@@ -54,3 +66,4 @@
 */
 
 //CODE HERE
+firstTicket.updateStatus('cooking');
